@@ -6,10 +6,23 @@ jobs:
     steps: 
       - name: Check out repository code
         uses: actions/checkout@v4
+        
       - name: build
         run: |
           chmod +x gradlew
           ./gradlew build
-        
-    
+          
+      - name: SonarCloud Analysis
+        run: ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_SONARCLOUD }}
 
+      - name: Docker Login
+        uses: docker/login-action@v3.0.0
+
+      - name: Docker Build
+        run: |
+          docker build --tag guisoacelga/microservicio-java:latest .
+          docker images
+          
+      - name: Docker Push
+        run: |
+          docker push guisoacelga/microservicio-java
