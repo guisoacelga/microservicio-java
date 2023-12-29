@@ -1,5 +1,5 @@
 name: Final Assignment
-on: workflow_dispatch
+on: push
 jobs: 
   checkout: 
     runs-on: ubuntu-latest
