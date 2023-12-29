@@ -39,3 +39,11 @@ jobs:
       - name: Docker Push
         run: |
           docker push guisoacelga75/microservicio-java
+
+  deploy: 
+      runs-on: self-hosted
+      needs: build
+      steps: 
+        - name: Check out repository code
+          uses: actions/checkout@v4
+          
