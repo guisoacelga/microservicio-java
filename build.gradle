@@ -21,8 +21,8 @@ dependencies {
 
 sonar {
   	properties {
-	    	property "sonar.projectKey", "DEVOPS-Fundamentos-2023_microservicio-java"
-	    	property "sonar.organization", "devops-fundamentos-2023"
+	    	property "sonar.projectKey", "microservicio-java"
+	    	property "sonar.organization", "guisoacelga"
 	    	property "sonar.host.url", "https://sonarcloud.io/"
 	    	property "sonar.projectName", "microservicio-java"
   	}
